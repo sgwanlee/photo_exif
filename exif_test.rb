@@ -34,6 +34,7 @@ def distance a, b
 	d = R * c
 end
 
+
 photo = MiniExiftool.new 'myroom.jpg'
 home[:lat] = convertToDD photo.GPSLatitude
 home[:lon] = convertToDD photo.GPSLongitude
@@ -47,4 +48,8 @@ restaurant[:time] = photo.CreateDate
 puts home.inspect
 puts restaurant.inspect
 
+
 puts distance home, restaurant
+
+# Time difference (sec)
+puts home[:time] - restaurant[:time]
